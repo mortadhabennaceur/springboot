@@ -1,6 +1,7 @@
 package tn.esprit.firstspringbootproject.Services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.firstspringbootproject.Entities.Universite;
 import tn.esprit.firstspringbootproject.Repository.IUniversiteRepository;
@@ -10,6 +11,8 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class UniversiteService implements IUniversiteService{
+
+    @Autowired
     IUniversiteRepository universiteRepository;
     @Override
     public List<Universite> retrieveAllUniversities() {

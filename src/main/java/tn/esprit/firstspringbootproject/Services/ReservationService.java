@@ -1,6 +1,7 @@
 package tn.esprit.firstspringbootproject.Services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.firstspringbootproject.Entities.Reservation;
 import tn.esprit.firstspringbootproject.Repository.IReservationRepository;
@@ -11,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ReservationService implements IReservationService{
 
+    @Autowired
     IReservationRepository reservationRepository;
     @Override
     public List<Reservation> retrieveAllReservation() {

@@ -1,6 +1,7 @@
 package tn.esprit.firstspringbootproject.Services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.firstspringbootproject.Entities.Bloc;
 import tn.esprit.firstspringbootproject.Repository.IBlocRepository;
@@ -11,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BlocService implements IBlocService{
 
+    @Autowired
     IBlocRepository blocRepository;
     @Override
     public List<Bloc> retrieveBlocs() {

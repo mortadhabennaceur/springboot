@@ -1,6 +1,7 @@
 package tn.esprit.firstspringbootproject.Services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.firstspringbootproject.Entities.Chambre;
 import tn.esprit.firstspringbootproject.Repository.IChambreRepository;
@@ -11,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ChambreService implements IChambreService{
 
+    @Autowired
     IChambreRepository chambreRepository;
     @Override
     public List<Chambre> retrieveAllChambres() {

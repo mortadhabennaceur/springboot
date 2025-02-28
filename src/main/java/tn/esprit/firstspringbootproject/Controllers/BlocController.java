@@ -1,6 +1,7 @@
 package tn.esprit.firstspringbootproject.Controllers;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.firstspringbootproject.Entities.Bloc;
 import tn.esprit.firstspringbootproject.Services.IBlocService;
@@ -11,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/bloc")
 public class BlocController {
+    @Autowired
     IBlocService blocService;
 
     @PostMapping("/add-bloc")
@@ -27,13 +29,13 @@ public class BlocController {
         return blocService.retrieveBlocs();
     }
 
-    @GetMapping("/display-blocbyid")
-    public Bloc displayblocbyid(@PathVariable long idBloc) {
+    @GetMapping("/display-blocbyid/{id}")
+    public Bloc displayblocbyid(@PathVariable("id") long idBloc) {
         return blocService.retrieveBloc(idBloc);
     }
 
-    @DeleteMapping("/delete-bloc")
-    public void deletebloc(@PathVariable long idBloc) {
+    @DeleteMapping("/delete-bloc/{id}")
+    public void deletebloc(@PathVariable("id") long idBloc) {
         blocService.removeBloc(idBloc);
     }
 

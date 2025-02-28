@@ -1,6 +1,7 @@
 package tn.esprit.firstspringbootproject.Services;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.firstspringbootproject.Entities.Etudiant;
 import tn.esprit.firstspringbootproject.Repository.IEtudiantRepository;
@@ -11,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class EtudiantService implements IEtudiantService{
 
+    @Autowired
     IEtudiantRepository etudiantRepository;
     @Override
     public List<Etudiant> retrieveAllEtudiants() {
