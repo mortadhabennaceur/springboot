@@ -37,5 +37,11 @@ public class UniversitieController {
         return universiteService.retrieveUniversite(idUniversite);
     }
 
+    @PutMapping("/affecter-foyer/{idFoyer}/{nomUniversite}")
+    public Universite affecterFoyerAUniversite(@PathVariable long idFoyer, @PathVariable String nomUniversite) {
+        return universiteService.affecterFoyerAUniversite(idFoyer, nomUniversite);
+    }
+
+
 
 }
