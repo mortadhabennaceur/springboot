@@ -4,4 +4,5 @@ public enum TypeChambre {
     SIMPLE,
     DOUBLE,
     TRIPLE
+
 }

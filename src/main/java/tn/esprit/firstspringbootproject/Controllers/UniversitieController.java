@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.firstspringbootproject.Entities.Bloc;
+import tn.esprit.firstspringbootproject.Entities.Foyer;
 import tn.esprit.firstspringbootproject.Entities.Universite;
 import tn.esprit.firstspringbootproject.Services.IUniversiteService;
 import tn.esprit.firstspringbootproject.Services.UniversiteService;
@@ -40,6 +41,16 @@ public class UniversitieController {
     @PutMapping("/affecter-foyer/{idFoyer}/{nomUniversite}")
     public Universite affecterFoyerAUniversite(@PathVariable long idFoyer, @PathVariable String nomUniversite) {
         return universiteService.affecterFoyerAUniversite(idFoyer, nomUniversite);
+    }
+
+    @PutMapping("/desaffecter-foyer/{idUniversite}")
+    public Universite desaffecterFoyerAUniversite(@PathVariable long idUniversite) {
+        return universiteService.desaffecterFoyerAUniversite(idUniversite);
+    }
+
+    @PostMapping("/ajouter-foyer/{idUniversite}")
+    public Universite ajouterFoyerEtAffecterAUniversite(@RequestBody Foyer foyer, @PathVariable long idUniversite) {
+        return universiteService.ajouterFoyerEtAffecterAUniversite(foyer, idUniversite);
     }
 
 
